@@ -39,5 +39,24 @@ describe('each()', () => {
     });
     expect(count).toBe(3);
   });
-});
 
+  it('iterates over every element of an array and passes its contents to a newly created array', () => {
+    const arr = ['Taras', 100, null, {a: true}];
+    const newArr = [];
+
+    _.each(arr, function(element, index, array) {
+      newArr[index] = array[index];
+    });
+    expect(arr).toEqual(newArr);
+  });
+
+  it('iterates over every element\'s index and passes these indices into a newly created array', () => {
+    const indexArr = [0, 1, 2, 3, 4, 5];
+    const newIndexArr = [];
+
+    _.each(indexArr, function(element, index, array) {
+      newIndexArr[index] = index;
+    });
+    expect(indexArr).toEqual(newIndexArr);
+  });
+});
