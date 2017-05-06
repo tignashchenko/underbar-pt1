@@ -26,4 +26,18 @@ describe('indexOf()', () => {
     expect(_.indexOf(arr, 'bar', 2)).toBe(3);
   });
 
+  it('returns the first matching character in a string', () => {
+    const str = 'Hack Reactor';
+    expect(_.indexOf(str, 'a')).toBe(1);
+  });
+
+  it('returns -1 for a missing value in a string', () => {
+    const str = 'Hack Reactor';
+    expect(_.indexOf(str, 'q')).toBe(-1);
+  });
+
+  it('find character starting from a specific index', () => {
+    const str = 'Hack Reactor';
+    expect(_.indexOf(str, 'a', 3)).toBe(7);
+  });
 });
