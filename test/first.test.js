@@ -12,4 +12,12 @@ describe('first()', () => {
   it('returns the whole array if you ask for more elements than it has', () => {
     expect(_.first(['a', 'b', 'c'], 5)).toEqual(['a', 'b', 'c']);
   });
+
+  it('returns the first element of an array with different element types', () => {
+    expect(_.first([{a:1}, 'true', 100, null])).toEqual({a:1});
+  });
+
+  it('returns the first 3 elements of an array with different element types', () => {
+    expect(_.first([{a:1}, 'true', 100, null], 3)).toEqual([{a:1}, 'true', 100]);
+  });
 });
