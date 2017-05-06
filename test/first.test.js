@@ -14,10 +14,10 @@ describe('first()', () => {
   });
 
   it('returns the first element of an array with different element types', () => {
-    expect(_.first([{a:1}, 'true', 100, null])).toEqual({a:1});
+    expect(_.first([{a:1}, true, 100, null])).toEqual({a:1});
   });
 
   it('returns the first 3 elements of an array with different element types', () => {
-    expect(_.first([{a:1}, 'true', 100, null], 3)).toEqual([{a:1}, 'true', 100]);
+    expect(_.first([{a:1}, true, 100, null], 3)).toEqual([{a:1}, true, 100]);
   });
 });
