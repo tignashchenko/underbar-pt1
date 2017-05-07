@@ -31,4 +31,13 @@ describe('contains()', () => {
     expect(_.contains(ponies, 'Applejack')).toBe(false);
   });
 
+  it('returns true if the target string value is among the elemets of an array', () => {
+    const family = ['Volodymyr', 'Olga', 'Taras', 'Bogdan'];
+    expect(_.contains(family, 'Taras')).toBe(true);
+  });
+
+  it('returns false if character is not present in string', () => {
+    const name = 'Taras';
+    expect(_.contains(name, 'q')).toBe(false);
+  });
 });
