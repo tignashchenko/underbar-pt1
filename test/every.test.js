@@ -17,5 +17,15 @@ describe('every()', () => {
       expect(_.every(nums, num => num % 2 === 1)).toBe(false);
     });
 
+    it('returns true if length of all strings is equal to 4', () => {
+      const randomFourLetterWords = ['Hack', 'push', 'pull', 'Back'];
+      expect(_.every(randomFourLetterWords, word => word.length === 4)).toBe(true);
+    });
+
+    it('returns false if not all array elements are of type number', () => {
+      const randomArray = ['Hi', true, false, undefined, 25, true];
+      expect(_.every(randomArray, element => typeof(element) === 'number')).toBe(false);
+    });
+
   });
 });
